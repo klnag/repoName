@@ -1,0 +1,1 @@
+export { SchemaController as SchemaPage } from "./SchemaController"
