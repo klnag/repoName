@@ -1,1 +1,0 @@
-export { HomeController as HomePage } from "./HomeController"

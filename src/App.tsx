@@ -1,27 +1,32 @@
 import { useState } from 'react'
-import { Routes } from 'react-router'
-import { Route, useParams } from 'react-router-dom'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import { HomePage } from './pages/HomePage'
-import { SchemaPage } from './pages/SchemaPage'
-import "./App.scss"
+import reactLogo from './assets/react.svg'
+import './App.css'
 
 function App() {
-  let { id } = useParams();
-  console.log(useParams())
+  const [count, setCount] = useState(0)
 
   return (
-    <div className='text-white'>
-      <header className='bg-[#2d2d2d] w-full h-[7vh]'><Header/></header>
-      <main className='bg-[#171717] min-h-[93vh]'>
-        <Routes>
-          <Route path=''  element={<HomePage/>}/>
-          <Route path='/:id/schema' element={<SchemaPage/>}/>
-          <Route path='*' element={<h1>Not found</h1>}/>
-        </Routes>
-      </main>
-      {/* <footer className='bg-[#668d53] w-full h-[7vh]'><Footer/></footer> */}
+    <div className="App">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </div>
   )
 }
