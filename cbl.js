@@ -13,7 +13,7 @@ function onMouseMove(event, s, initialX, initialY, transformMatrix,startwidth,st
         s.style.width = ((startwidth + (dx*-1))) + "px";
         s.style.height = ((startheight + (dy))) + "px";
     }
-}
+} 
 
 function onMouseUp(event) {
     d = false
