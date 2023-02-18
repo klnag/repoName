@@ -11,7 +11,6 @@ export const llf = (event) => {
       const match = s.style.transform.match(/translate\((-?\d+)px,\s*(-?\d+)px\)/);
       const diffY = event.clientX - startY;
       const newHeight = startHeight - diffY;
-  
       s.style.width = newHeight + "px";
       s.style.transform = `translate(${Number(match1[1])+diffY}px, ${match[2]}px)`
     }
