@@ -6,7 +6,7 @@ let x = 0
 let v = false
 console.log(x)
 lt.addEventListener("mousedown", function(event) {
-  const childe = event.target.parentElement.children[8]
+  
 
   event.preventDefault();
 
@@ -20,10 +20,9 @@ lt.addEventListener("mousedown", function(event) {
     const newHeight = startHeight - diffY;
     // console.log(`${startHeight} + ${diffY} = ` + (startHeight + diffY) ,x)
     s.style.height = newHeight + "px";
-    console.log(x,diffY)
     s.style.transform = `translateY(${x+diffY}px)`
-    childe.style.height = newHeight + "px";
-    childe.style.transform = `translateY(${x+diffY}px)`
+    // childe.style.height = newHeight + "px";
+    // childe.style.transform = `translateY(${x+diffY}px)`
     // childe.style.height = newHeight + "px";
     // childe.style.transform = `translateY( ${( newHeight )}px)`
 
@@ -59,3 +58,13 @@ lb.addEventListener("mousedown", function(event) {
   document.addEventListener("mousemove", onMouseMove);
   document.addEventListener("mouseup", onMouseUp);
 });
+
+document.addEventListener("contextmenu", () => {
+  const element = s.children[8]
+  s.remove(element)
+  document.body.appendChild(element)
+  element.style.height = s.style.height
+  element.style.margin = "20rem"
+  element.style.transform = s.style.transform
+  console.log(element.style.transform,element.style.height)
+})

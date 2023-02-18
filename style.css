@@ -8,14 +8,19 @@ body {
   
   h1{
     margin: 0;
+    width: max-content;
+    background-color: red;
+    height: max-content;
+
   }
   
   .s {
     margin: 20rem;
-    width: max-content;
-    height: max-content;
+    /* width: max-content;
+    height: max-content; */
     position: relative;
     resize: both;
+    z-index: 999;
   }
   
   .ctl{
