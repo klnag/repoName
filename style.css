@@ -4,15 +4,13 @@ body {
     margin: 0;
     height: 100vh;
     user-select: none;
+    position: relative;
   }
   
   h1{
-    margin: 0;
     width: max-content;
-    background-color: red;
     height: max-content;
-    /* margin: 10rem; */
-    position: relative;
+    position: absolute;
   }
   
   #ctl{
