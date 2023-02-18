@@ -1,9 +1,11 @@
 const lb = document.getElementById("lb");
 const lt = document.getElementById("lt");
 const lr = document.getElementById("lr");
+const ll = document.getElementById("ll");
 const s = document.getElementById("s");
 
 let x = 0
+let xx = 0
 let v = false
 console.log(x)
 lt.addEventListener("mousedown", function(event) {
@@ -81,6 +83,53 @@ lr.addEventListener("mousedown", function(event) {
   document.addEventListener("mousemove", onMouseMove);
   document.addEventListener("mouseup", onMouseUp);
 });
+
+
+
+
+
+
+
+
+
+
+
+ll.addEventListener("mousedown", function(event) {
+  event.preventDefault();
+
+  const startHeight = parseInt(getComputedStyle(s).width, 10);
+  const startY = event.clientX;
+
+  xx = Number(s.style.transform.slice(0,-3).slice(11))
+  function onMouseMove(event) {
+    
+    const diffY = event.clientX - startY;
+    const newHeight = startHeight - diffY;
+    s.style.width = newHeight + "px";
+    s.style.transform = `translateX(${xx+diffY}px)`
+
+  }
+  function onMouseUp() {
+
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
