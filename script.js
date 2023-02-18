@@ -1,5 +1,6 @@
 const lb = document.getElementById("lb");
 const lt = document.getElementById("lt");
+const lr = document.getElementById("lr");
 const s = document.getElementById("s");
 
 let x = 0
@@ -58,6 +59,31 @@ lb.addEventListener("mousedown", function(event) {
   document.addEventListener("mousemove", onMouseMove);
   document.addEventListener("mouseup", onMouseUp);
 });
+
+
+lr.addEventListener("mousedown", function(event) {
+  const childe = event.target.parentElement.children[8]
+  const startwidth = parseInt(getComputedStyle(s).width, 10);
+  const startY = event.clientX;
+
+  function onMouseMove(event) {
+    const diffY = (startY - event.clientX) * -1;
+    s.style.width = startwidth + diffY + "px";  
+    childe.style.width = startwidth + diffY + "px";
+    
+  }
+
+  function onMouseUp() {
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+});
+
+
+
 
 document.addEventListener("contextmenu", () => {
   const element = s.children[8]
