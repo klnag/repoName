@@ -1,5 +1,3 @@
-const s = document.getElementById("s");
-
 export const lrf = (event) => {
     const childe = event.target.parentElement.children[8]
     const startwidth = parseInt(getComputedStyle(s).width, 10);

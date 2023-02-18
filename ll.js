@@ -1,11 +1,7 @@
-const s = document.getElementById("s");
-
 export const llf = (event) => {
     event.preventDefault();
-    if(!s.style.transform) {
-      s.style.transform = `translate(0px, 0px)`
-      
-        }
+    if(!s.style.transform) s.style.transform = `translate(0px, 0px)`
+    
     const startHeight = parseInt(getComputedStyle(s).width, 10);
     const startY = event.clientX;
     const match1 = s.style.transform.match(/translate\((-?\d+)px,\s*(-?\d+)px\)/);

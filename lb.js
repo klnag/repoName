@@ -1,5 +1,3 @@
-const s = document.getElementById("s");
-
 export const lbf =  (event) => {
     const childe = event.target.parentElement.children[8]
     const startHeight = parseInt(getComputedStyle(s).height, 10);
