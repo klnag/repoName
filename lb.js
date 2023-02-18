@@ -3,7 +3,6 @@ export const lbf =  (event) => {
     const startHeight = parseInt(getComputedStyle(s).height, 10);
     const startY = event.clientY;
   
-    console.log(event.target.parentElement)
     function onMouseMove(event) {
       const diffY = (startY - event.clientY) * -1;
       s.style.height = startHeight + diffY + "px";  
