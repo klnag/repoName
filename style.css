@@ -16,11 +16,11 @@ body {
   
   .s {
     margin: 20rem;
-    /* width: max-content;
-    height: max-content; */
+    width: max-content;
+    height: max-content;
     position: relative;
     resize: both;
-    z-index: 999;
+    transform: translate( 0px, 0px);
   }
   
   .ctl{
