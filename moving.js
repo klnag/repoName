@@ -1,11 +1,14 @@
 let d = false
 
-function onMouseMove(event, s, initialX, initialY, transformMatrix) {
+function onMouseMove(event, s, initialX, initialY, transformMatrix,match) {
     if(d) {
         const dx = event.clientX - initialX;
         const dy = event.clientY - initialY;
-        const newMatrix = transformMatrix.translate(dx, dy);
-        s.style.transform = newMatrix.toString();
+        console.log(dx,dy)
+        s.style.transform = `translate(${(Number(match[1])+dx)}px, ${Number(match[2])+dy}px)`
+
+        // const newMatrix = transformMatrix.translate(dx, dy);
+        // s.style.transform = newMatrix.toString();
     }
 }
 
@@ -22,9 +25,12 @@ export const moving = (e) => {
     const transformMatrix = new DOMMatrix(getComputedStyle(s).transform);
     let initialX = e.clientX;
     let initialY = e.clientY;
+    if(!s.style.transform) s.style.transform = `translate(0px, 0px)`
+
+    const match = s.style.transform.match(/translate\((-?\d+)px,\s*(-?\d+)px\)/);
 
     document.addEventListener("mousemove", (event) => {
-      onMouseMove(event, s, initialX, initialY, transformMatrix);
+      onMouseMove(event, s, initialX, initialY, transformMatrix,match);
     });
 
     document.addEventListener("mouseup", onMouseUp);
