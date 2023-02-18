@@ -5,13 +5,18 @@ body {
     height: 100vh;
     user-select: none;
   }
+
+  p{
+    margin: 0;
+  }
   
   h1{
     margin: 0;
     width: max-content;
     background-color: red;
     height: max-content;
-
+    margin: 10rem;
+    position: relative;
   }
   
   .s {
@@ -93,6 +98,7 @@ body {
     position: absolute;
     background-color: rgb(126, 201, 194);
     left: -1px;
+    top: 1px;
   }
   .lr{
     cursor: e-resize;
@@ -102,4 +108,5 @@ body {
     position: absolute;
     background-color: rgb(126, 201, 194);
     right: -1px;
+    top: 1px;
   }

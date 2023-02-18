@@ -1,5 +1,6 @@
 export const llf = (event) => {
     event.preventDefault();
+    const s = event.target.parentElement
     if(!s.style.transform) s.style.transform = `translate(0px, 0px)`
     
     const startHeight = parseInt(getComputedStyle(s).width, 10);

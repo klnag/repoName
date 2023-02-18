@@ -1,4 +1,5 @@
 export const lbf =  (event) => {
+  const s = event.target.parentElement
     const childe = event.target.parentElement.children[8]
     const startHeight = parseInt(getComputedStyle(s).height, 10);
     const startY = event.clientY;

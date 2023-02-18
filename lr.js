@@ -1,4 +1,5 @@
 export const lrf = (event) => {
+  const s = event.target.parentElement
     const childe = event.target.parentElement.children[8]
     const startwidth = parseInt(getComputedStyle(s).width, 10);
     const startY = event.clientX;
@@ -7,7 +8,7 @@ export const lrf = (event) => {
       const diffY = (startY - event.clientX) * -1;
   
       s.style.width = startwidth + diffY + "px";  
-      childe.style.width = startwidth + diffY + "px";
+      // childe.style.width = startwidth + diffY + "px";
     }
   
     function onMouseUp() {
