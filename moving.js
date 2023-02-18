@@ -4,8 +4,10 @@ function onMouseMove(event, s, initialX, initialY, transformMatrix,match) {
     if(d) {
         const dx = event.clientX - initialX;
         const dy = event.clientY - initialY;
-        console.log(dx,dy)
-        s.style.transform = `translate(${(Number(match[1])+dx)}px, ${Number(match[2])+dy}px)`
+        if(s.className) {
+
+          s.style.transform = `translate(${(Number(match[1])+dx)}px, ${Number(match[2])+dy}px)`
+        } 
 
         // const newMatrix = transformMatrix.translate(dx, dy);
         // s.style.transform = newMatrix.toString();
@@ -20,6 +22,7 @@ function onMouseUp(event) {
 
 export const moving = (e) => {
     if (e.target.className === "mov") {
+      console.log(e.target)
       d = true
     const s = e.target;
     const transformMatrix = new DOMMatrix(getComputedStyle(s).transform);

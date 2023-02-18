@@ -37,6 +37,7 @@ const h1 = document.getElementById("h1_0");
 let prev = null;
 
 document.addEventListener("click", (e) => {
+    console.log(e.target)
     // Check if a previous element has been clicked and if the current target is different from it
     if (prev && prev.target !== e.target) {
         // Remove the four divs from the previously clicked element if they exist
@@ -45,6 +46,7 @@ document.addEventListener("click", (e) => {
             const child = prevChildren[i];
             if (child.id === "ctr" || child.id === "ctl" || child.id === "cbl" || child.id === "cbr" || child.id === "lt" || child.id === "ll" || child.id === "lr" || child.id === "lb") {
                 prev.target.removeChild(child);
+                prev.target.classList.remove("mov");
             }
         }
     }
