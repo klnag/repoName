@@ -8,7 +8,6 @@ export const lrf = (event) => {
       const diffY = (startY - event.clientX) * -1;
   
       s.style.width = startwidth + diffY + "px";  
-      // childe.style.width = startwidth + diffY + "px";
     }
   
     function onMouseUp() {

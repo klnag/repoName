@@ -3,8 +3,6 @@ import {lbf} from "./lb.js";
 import {lrf} from "./lr.js";
 import {llf} from "./ll.js";
 
-// const s = document.getElementById("s");
-
 const lb = document.getElementById("lb");
 const lt = document.getElementById("lt");
 const lr = document.getElementById("lr");
