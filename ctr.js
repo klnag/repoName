@@ -20,6 +20,8 @@ function onMouseMove(event, s, initialX, initialY, transformMatrix,startwidth,st
 
 function onMouseUp(event) {
     d = false
+    // console.log(event.target.parentElement)
+    // event.target.parentElement.removeChild(event.target)
   document.removeEventListener("mousemove", onMouseMove);
   document.removeEventListener("mouseup", onMouseUp);
 }
