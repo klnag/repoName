@@ -34,29 +34,75 @@ const h1 = document.getElementById("h1_0");
 // cbl.addEventListener("mousedown", cblf); 
 // cbr.addEventListener("mousedown", cbrf);
 
-let prev = ""
+let prev = null;
 
 document.addEventListener("click", (e) => {
-    if(prev && prev.target.id !== e.target.id) {
-        for (const child of prev.target.children) {
-            if(child.id === "ctr") {
-                // g = true
-                prev.target.removeChild(child)
-                console.log(prev.target.parentElement)
+    // Check if a previous element has been clicked and if the current target is different from it
+    if (prev && prev.target !== e.target) {
+        // Remove the four divs from the previously clicked element if they exist
+        const prevChildren = prev.target.children;
+        for (let i = prevChildren.length - 1; i >= 0; i--) {
+            const child = prevChildren[i];
+            if (child.id === "ctr" || child.id === "ctl" || child.id === "cbl" || child.id === "cbr" || child.id === "lt" || child.id === "ll" || child.id === "lr" || child.id === "lb") {
+                prev.target.removeChild(child);
             }
-          }
-    }
-    prev = e
-    let g = false
-    for (const child of e.target.children) {
-        if(child.id === "ctr") {
-            g = true
         }
-      }
-      if(!g) {
-          const ctr = document.createElement("div")
-          ctr.id = "ctr"
-          e.target.appendChild(ctr)
-      }
-    // console.log(e.target)
-})
+    }
+    
+    // Add the four divs to the current target if they do not exist
+    let g = false;
+    for (const child of e.target.children) {
+        if (child.id === "ctr") {
+            g = true;
+            break;
+        }
+    }
+    if (!g) {
+        const ctr = document.createElement("div");
+        const ctl = document.createElement("div");
+        const cbl = document.createElement("div");
+        const cbr = document.createElement("div");
+
+        const lt = document.createElement("div");
+        const ll = document.createElement("div");
+        const lr = document.createElement("div");
+        const lb = document.createElement("div");
+
+        ctr.id = "ctr";
+        ctl.id = "ctl";
+        cbl.id = "cbl";
+        cbr.id = "cbr";
+        
+        lt.id = "lt";
+        ll.id = "ll";
+        lr.id = "lr";
+        lb.id = "lb";
+
+        ctr.addEventListener("mousedown", ctrf)
+        ctl.addEventListener("mousedown", ctlf)
+        cbl.addEventListener("mousedown", cblf)
+        cbr.addEventListener("mousedown", cbrf)
+
+        lt.addEventListener("mousedown", ltf)
+        ll.addEventListener("mousedown", llf)
+        lr.addEventListener("mousedown", lrf)
+        lb.addEventListener("mousedown", lbf)
+
+        e.target.appendChild(ctr);
+        e.target.appendChild(ctl);
+        e.target.appendChild(cbl);
+        e.target.appendChild(cbr);
+
+        e.target.appendChild(lt);
+        e.target.appendChild(ll);
+        e.target.appendChild(lr);
+        e.target.appendChild(lb);
+
+        e.target.className = "mov"
+        e.target.addEventListener("mousedown", moving);
+
+    }
+    
+    // Update the previously clicked element to the current target
+    prev = e;
+});
