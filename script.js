@@ -4,6 +4,7 @@ import {lrf} from "./lr.js";
 import {llf} from "./ll.js";
 
 import {ctlf} from "./ctl.js";
+import {ctrf} from "./ctr.js";
 
 import {moving} from "./moving.js";
 
@@ -15,6 +16,7 @@ const lr = document.getElementById("lr");
 const ll = document.getElementById("ll");
 
 const ctl = document.getElementById("ctl");
+const ctr = document.getElementById("ctr");
 
 h1.addEventListener("mousedown", moving);
 
@@ -24,3 +26,4 @@ lr.addEventListener("mousedown", lrf);
 ll.addEventListener("mousedown", llf);
 
 ctl.addEventListener("mousedown", ctlf);
+ctr.addEventListener("mousedown", ctrf);
