@@ -16,8 +16,8 @@ function onMouseUp(event) {
 }
 
 export const moving = (e) => {
-    d = true
-  if (e.target.className === "mov") {
+    if (e.target.className === "mov") {
+      d = true
     const s = e.target;
     const transformMatrix = new DOMMatrix(getComputedStyle(s).transform);
     let initialX = e.clientX;
