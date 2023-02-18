@@ -38,15 +38,20 @@ let prev = null;
 
 document.addEventListener("click", (e) => {
     console.log(e.target)
-    // Check if a previous element has been clicked and if the current target is different from it
-    if (prev && prev.target !== e.target) {
-        // Remove the four divs from the previously clicked element if they exist
-        const prevChildren = prev.target.children;
-        for (let i = prevChildren.length - 1; i >= 0; i--) {
-            const child = prevChildren[i];
-            if (child.id === "ctr" || child.id === "ctl" || child.id === "cbl" || child.id === "cbr" || child.id === "lt" || child.id === "ll" || child.id === "lr" || child.id === "lb") {
-                prev.target.removeChild(child);
-                prev.target.classList.remove("mov");
+    if (e.target.id === "ctr" || e.target.id === "ctl" || e.target.id === "cbl" || e.target.id === "cbr" || e.target.id === "lt" || e.target.id === "ll" || e.target.id === "lr" || e.target.id === "lb") {}
+    else{
+
+        
+        // Check if a previous element has been clicked and if the current target is different from it
+        if (prev && prev.target !== e.target) {
+            // Remove the four divs from the previously clicked element if they exist
+            const prevChildren = prev.target.children;
+            for (let i = prevChildren.length - 1; i >= 0; i--) {
+                const child = prevChildren[i];
+                if (child.id === "ctr" || child.id === "ctl" || child.id === "cbl" || child.id === "cbr" || child.id === "lt" || child.id === "ll" || child.id === "lr" || child.id === "lb") {
+                    prev.target.removeChild(child);
+                    prev.target.classList.remove("mov");
+                }
             }
         }
     }
@@ -59,7 +64,7 @@ document.addEventListener("click", (e) => {
             break;
         }
     }
-    if (!g) {
+    if (!g && !(e.target.id === "ctr" || e.target.id === "ctl" || e.target.id === "cbl" || e.target.id === "cbr" || e.target.id === "lt" || e.target.id === "ll" || e.target.id === "lr" || e.target.id === "lb")) {
         const ctr = document.createElement("div");
         const ctl = document.createElement("div");
         const cbl = document.createElement("div");

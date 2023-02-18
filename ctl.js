@@ -6,7 +6,7 @@ function onMouseMove(event, s, initialX, initialY, transformMatrix,startwidth,st
     const dx = event.clientX - initialX;
     const dy = event.clientY - initialY;
     // const newMatrix = transformMatrix.translate(dx, dy);
-    console.log(((startheight + (dy*-1))) + "px")
+    // console.log(((startheight + (dy*-1))) + "px")
         // s.style.transform = newMatrix.toString();
         s.style.transform = `translate(${Number(match[1]) + dx}px, ${Number(match[2])+dy}px)`
 
